@@ -10,7 +10,7 @@ services:
       - ollama_data:/root/.ollama
     restart: unless-stopped
 
-  ollama-webui:
+ollama-webui:
     image: ollamawebui/ollama-webui
     ports:
       - "8080:8080"
@@ -19,7 +19,7 @@ services:
     depends_on:
       - ollama
     restart: unless-stopped
-    entrypoint: ["http-server", "./build", "--cors"]
+    command: ["http-server", "./build", "--cors"]
 
   prometheus:
     image: prom/prometheus:latest
