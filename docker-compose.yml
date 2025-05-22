@@ -58,6 +58,7 @@ services:
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro # Explicitly mount cgroup çünküğ öyle abisi
     restart: unless-stopped
 
 volumes:
