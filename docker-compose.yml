@@ -21,7 +21,7 @@ services:
     depends_on:
       - ollama
     restart: unless-stopped
-    command: ["http-server", "./build", "--cors"]
+
     
   prometheus:
     image: prom/prometheus:latest
