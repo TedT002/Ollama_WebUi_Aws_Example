@@ -52,13 +52,14 @@ services:
   cadvisor:
     image: google/cadvisor:latest
     ports:
-      - "8081:8080" # Host portunu değiştirdim çakışmayı önlemek için
+      - "8081:8080"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro # Explicitly mount cgroup çünküğ öyle abisi
+      - /sys/fs/cgroup:/cgroup:ro
+    command: ["--docker_root=/var/lib/docker", "--cgroup_root=/cgroup"]
     restart: unless-stopped
 
 volumes:
