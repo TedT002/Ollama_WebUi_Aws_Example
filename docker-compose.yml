@@ -59,6 +59,7 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
     restart: unless-stopped
 
 
