@@ -10,3 +10,11 @@ scrape_configs:
   - job_name: 'cadvisor'
     static_configs:
       - targets: ['cadvisor:8080'] # cAdvisor servis adı ve portu
+
+  - job_name: 'ollama'
+    static_configs:
+      - targets: ['ollama:11434'] 
+
+  - job_name: 'ollama-webui'
+    static_configs:
+      - targets: ['ollama-webui:8080'] 
