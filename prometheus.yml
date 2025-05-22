@@ -9,7 +9,7 @@ scrape_configs:
 
   - job_name: 'cadvisor'
     static_configs:
-      - targets: ['cadvisor:8080'] # cAdvisor servis adı ve portu
+      - targets: ['cadvisor:8081'] # cAdvisor servis adı ve portu
 
   - job_name: 'ollama'
     static_configs:
