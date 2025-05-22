@@ -50,16 +50,17 @@ services:
     restart: unless-stopped
 
   cadvisor:
-    image: google/cadvisor:latest
-    ports:
-      - "8081:8080"
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:ro
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    restart: unless-stopped
+  image: gcr.io/cadvisor/cadvisor:v0.47.1  # offffff latest çalışmıyor mu
+  ports:
+    - "8081:8080"
+  volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:ro
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+    - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  restart: unless-stopped
+
 
 volumes:
   ollama_data:
