@@ -1,3 +1,5 @@
+##güncel
+
 version: '3.8'
 services:
   ollama:
