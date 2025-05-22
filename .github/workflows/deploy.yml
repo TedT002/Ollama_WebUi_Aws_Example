@@ -1,0 +1,25 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    paths:
+      - 'prometheus.yml' # Sadece bu dosyalar değiştiğinde tetikle
+      - 'docker-compose.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }} # GitHub Secret'tan al
+          username: ${{ secrets.EC2_USER }} # GitHub Secret'tan al
+          key: ${{ secrets.SSH_PRIVATE_KEY }} # GitHub Secret'tan al
+          script: |
+            cd ~/Ollama_Webui_Aws_Example
+            docker-compose up -d
