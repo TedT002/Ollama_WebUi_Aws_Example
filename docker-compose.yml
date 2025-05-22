@@ -50,7 +50,7 @@ services:
     restart: unless-stopped
 
   cadvisor:
-    image: google/cadvisor:latest  # offffff latest çalışmıyor
+    image: google/cadvisor:v0.46.0
     ports:
       - "8081:8080"
     volumes:
