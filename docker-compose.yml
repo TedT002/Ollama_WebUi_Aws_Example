@@ -9,6 +9,8 @@ services:
     volumes:
       - ollama_data:/root/.ollama
     restart: unless-stopped
+    environment:
+      OLLAMA_ORIGINS: "*" # Tüm kökenlere izin ver
 
   ollama-webui:
     image: ollamawebui/ollama-webui
