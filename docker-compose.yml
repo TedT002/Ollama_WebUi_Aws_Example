@@ -50,7 +50,7 @@ services:
     restart: unless-stopped
 
   cadvisor:
-  image: gcr.io/cadvisor/cadvisor:v0.47.1  # offffff latest çalışmıyor mu
+  image: fefx/gcr.io.cadvisor.cadvisor:v0.49.1  # offffff latest çalışmıyorrrr
   ports:
     - "8081:8080"
   volumes:
